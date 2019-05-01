@@ -188,4 +188,4 @@ bot.on("message", async message => {
 
 });
 
-bot.login(NTcyOTMzODQ2NDI5OTkwOTIz.XMlHQw.ywHvpj5g11qkXZE3cYJ_MWHf8KM);
+bot.login("NTcyOTMzODQ2NDI5OTkwOTIz.XMlHQw.ywHvpj5g11qkXZE3cYJ_MWHf8KM");
