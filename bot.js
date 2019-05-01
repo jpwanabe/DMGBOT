@@ -46,14 +46,11 @@ function textchannelupdate(){
         playerlist = ""
         playerArray = state.players;
         console.log("getting players...")
-        if (playerArray.length === 0{
-            playerlist = "The server is currently broken";
-        } else {
         while (i < playerArray.length) {
             playerlist = playerlist + playerArray[i] + `
 `;
             i++;
-        }}
+        }
         console.log(playerlist);
         statuschannel = bot.channels.get("573022289931796511");
         console.log("Status updated!")
