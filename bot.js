@@ -147,13 +147,10 @@ bot.on("message", async message => {
         return message.channel.send(dmgstatus);
     }*/
 
-    /*
-    if (cmd === `${prefix}updatebonzo`){
-       // message.delete().catch(O_o=>{});
-        message.edit('i say this now')
-        .then(msg => console.log(`New message content: ${msg}`))
-        .catch(console.error);
-    }*/
+    
+    if (cmd === `${prefix}botinfo`){
+        message.channel.send("I was made by Bonzo, for the DMG Discord server!");
+    }
 
     //bot command that returns amount of online players and map being played
     if (cmd === `${prefix}invite`){
