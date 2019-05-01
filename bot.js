@@ -43,9 +43,12 @@ function textchannelupdate(){
         host: '66.151.244.2'
     }).then((state) => {
         var i = 0;
-        playerlist = "The server is empty right now!"
+        playerlist = ""
         playerArray = state.players;
         console.log("getting players...")
+        if (playerArray.length == 0) {
+            playerlist = "The server is empty right now!";
+        }
         while (i < playerArray.length) {
             playerlist = playerlist + playerArray[i].name + `
 `;
