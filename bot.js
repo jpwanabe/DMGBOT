@@ -27,7 +27,7 @@ function voicechannelupdate(){
         type: 'garrysmod',
         host: '66.151.244.2'
     }).then((state) => {
-        var status = state.players.length + " of " + state.maxplayers + " in map " + state.map;
+        var status = state.players.length + " in " + state.map;
         statuschannel = bot.channels.get("573022265416089603");
         statuschannel.setName(status);
         console.log("Status updated!")
@@ -86,6 +86,7 @@ bot.on("ready", async message => {
     statuschat.send(`steam://connect/66.151.244.2:27015
 
 `);
+    statuschat.send(" ");
     statuschat.send("--------------------------**ONLINE PLAYERS**--------------------------");
     statuschat.send("Initializing...");
     bot.setInterval(textchannelupdate,30000);
@@ -155,14 +156,15 @@ bot.on("message", async message => {
     }*/
 
     //bot command that returns amount of online players and map being played
-    if (cmd === `${prefix}stat`){
+    if (cmd === `${prefix}invite`){
         Gamedig.query({
             type: 'garrysmod',
             host: '66.151.244.2'
         }).then((state) => {
             console.log(state);
             message.channel.send(`The server has ${state.players.length} players on right now.`);
-            message.channel.send(`The server is on the map ${state.map} right now.`)
+            message.channel.send(`The server is on the map ${state.map} right now.`);
+            message.channel.send(`Come join us! steam://connect/66.151.244.2:27015`);
         }).catch((error) => {
             console.log("Server is offline");
         });
