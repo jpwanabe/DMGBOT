@@ -1,4 +1,5 @@
 const botconfig = require("./botconfig.json");
+const token2 = require("./token.json");
 const Discord = require("discord.js");
 const Gamedig = require('gamedig');
 const bot = new Discord.Client({disableEveryone: true});
@@ -188,4 +189,5 @@ bot.on("message", async message => {
 
 });
 
-bot.login("NTcyOTMzODQ2NDI5OTkwOTIz.XMlHQw.ywHvpj5g11qkXZE3cYJ_MWHf8KM");
+
+bot.login(process.env.TOKEN);
