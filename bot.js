@@ -190,4 +190,5 @@ bot.on("message", async message => {
 });
 
 
-bot.login(process.env.TOKEN);
+let dank = process.env.BOT_TOKEN;
+bot.login(dank);
