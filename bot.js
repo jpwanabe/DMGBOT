@@ -86,7 +86,7 @@ bot.on("ready", async message => {
     statuschat.send(`steam://connect/66.151.244.2:27015
 
 `);
-    statuschat.send(`\n`);
+    statuschat.send(".");
     statuschat.send("--------------------------**ONLINE PLAYERS**--------------------------");
     statuschat.send("Initializing...");
     bot.setInterval(textchannelupdate,30000);
