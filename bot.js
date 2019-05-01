@@ -47,7 +47,7 @@ function textchannelupdate(){
         playerArray = state.players;
         console.log("getting players...")
         while (i < playerArray.length) {
-            playerlist = playerlist + playerArray[i].name.padEnd(20) + ` test
+            playerlist = playerlist + playerArray[i].name.padEnd(40) + `testing
 `;
             i++;
         }
