@@ -188,4 +188,4 @@ bot.on("message", async message => {
 
 });
 
-bot.login(botconfig.token);
+bot.login(process.env.NTcyOTMzODQ2NDI5OTkwOTIz.XMk13A.twwgFuEJVHP0y2JlWI6XRa5GoZ0);
