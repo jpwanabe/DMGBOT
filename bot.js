@@ -83,9 +83,12 @@ bot.on("ready", async message => {
     bot.setInterval(update,30000);
     bot.setInterval(voicechannelupdate,30000);
     statuschat = bot.channels.get("573022289931796511");
+    statuschat.send("***DIRECT CONNECT TO SERVER LINK***: Click this link to open up Garry's Mod and connect to the server");
     statuschat.send("steam://connect/66.151.244.2:27015");
+    statuschat.send("-------------------------------------------------------------");
     statuschat.send("Initializing...");
     bot.setInterval(textchannelupdate,30000);
+    statuschat.send("-------------------------------------------------------------");
 });
 
 //List of commands that can be called to the bot
