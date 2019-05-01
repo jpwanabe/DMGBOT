@@ -69,7 +69,6 @@ function textchannelupdate(){
         lastMessage.edit(`${playerlist}`)
         .then(msg => console.log(`New message content: ${msg}`))
         .catch(console.error);
-        statuschat.send("-------------------------------------------------------------");
 
     }).catch((error) => {
         console.log("Server is offline");
@@ -85,6 +84,7 @@ bot.on("ready", async message => {
     statuschat = bot.channels.get("573022289931796511");
     statuschat.send("***Click this link to open up Garry's Mod and connect to the server!***");
     statuschat.send(`steam://connect/66.151.244.2:27015
+
 `);
     statuschat.send("--------------------------**ONLINE PLAYERS**--------------------------");
     statuschat.send("Initializing...");
