@@ -2,6 +2,13 @@ const botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
 const Gamedig = require('gamedig');
 const bot = new Discord.Client({disableEveryone: true});
+//List of server ip's
+var servers = ["66.151.244.2"];
+// Channel number for Voice
+var vchannelnumber = ["573022265416089603"];
+// Channel number for text
+var tchannelnumber = ["573022289931796511"];
+
 
 //Function called every 30000 ms to update the "game" played by the bot
 function update(){
@@ -37,42 +44,47 @@ function voicechannelupdate(){
 };
 
 function textchannelupdate(){
-    //Server status query
-    Gamedig.query({
-        type: 'garrysmod',
-        host: '66.151.244.2'
-    }).then((state) => {
-        var i = 0;
-        playerlist = ""
-        playerArray = state.players;
-        console.log("getting players...")
-        if (playerArray.length == 0) {
-            playerlist = "The server is empty right now!";
-        }
-        while (i < playerArray.length) {
-            playerlist = playerlist + playerArray[i].name + `
-`;
-            i++;
-        }
-        console.log(playerlist);
-        statuschannel = bot.channels.get("573022289931796511");
-        console.log("Status updated!")
+		//Server status query
+	var o = 0;
+	while (o <= servers.length){
+		
+		Gamedig.query({
+			type: 'garrysmod',
+			host: servers[o].name,
+		}).then((state) => {
+			var i = 0;
+			playerlist = ""
+			playerArray = state.players;
+			console.log("getting players...")
+			if (playerArray.length == 0) {
+				playerlist = "The server is empty right now!";
+			}
+			while (i < playerArray.length) {
+				playerlist = playerlist + playerArray[i].name + `
+	`;
+				i++;
+			}
+			console.log(playerlist);
+			statuschannel = bot.channels.get("573022289931796511");
+			console.log("Status updated!")
 
-        statuschannel.fetchMessages({ limit: 1 }).then(messages => {
-            lastMessage = messages.first();
-            console.log("fetchin messages...")
-            if (!lastMessage.author.bot) {
-              console.log("last message's author is not a bot!")
-            }
-        }).catch(console.error);
-        
-        lastMessage.edit(`${playerlist}`)
-        .then(msg => console.log(`New message content: ${msg}`))
-        .catch(console.error);
+			statuschannel.fetchMessages({ limit: 1 }).then(messages => {
+				lastMessage = messages.first();
+				console.log("fetchin messages...")
+				if (!lastMessage.author.bot) {
+				  console.log("last message's author is not a bot!")
+				}
+			}).catch(console.error);
+			
+			lastMessage.edit(`${playerlist}`)
+			.then(msg => console.log(`New message content: ${msg}`))
+			.catch(console.error);
 
-    }).catch((error) => {
-        console.log("Server is offline");
-    });
+		}).catch((error) => {
+			console.log("Server is offline");
+		});
+		o++
+	}
 }
 
 //Sets the "game" being played by the bot every 30 seconds
