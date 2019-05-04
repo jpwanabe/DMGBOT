@@ -2,7 +2,7 @@ const botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
 const Gamedig = require('gamedig');
 const bot = new Discord.Client({disableEveryone: true});
-// test
+// test 2x
 //Function called every 30000 ms to update the "game" played by the bot
 function update(){
 
