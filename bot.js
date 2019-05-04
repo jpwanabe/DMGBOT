@@ -2,7 +2,7 @@ const botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
 const Gamedig = require('gamedig');
 const bot = new Discord.Client({disableEveryone: true});
-
+// test
 //Function called every 30000 ms to update the "game" played by the bot
 function update(){
 
@@ -65,7 +65,7 @@ function textchannelupdate(){
               console.log("last message's author is not a bot!")
             }
         }).catch(console.error);
-        
+
         lastMessage.edit(`${playerlist}`)
         .then(msg => console.log(`New message content: ${msg}`))
         .catch(console.error);
@@ -118,8 +118,8 @@ bot.on("message", async message => {
             }
         })
         .catch(console.error);
-        
-        setTimeout(function(){ 
+
+        setTimeout(function(){
             lastMessage.edit('i say this now')
             .then(msg => console.log(`New message content: ${msg}`))
             .catch(console.error);
@@ -147,7 +147,7 @@ bot.on("message", async message => {
         return message.channel.send(dmgstatus);
     }*/
 
-    
+
     if (cmd === `${prefix}botinfo`){
         message.channel.send("I was made by Bonzo, for the DMG Discord server!");
     }
@@ -186,7 +186,7 @@ bot.on("message", async message => {
                 i++;
             }
             message.author.send (playerlist);
-            message.channel.send ("Check your DM's for a list of online players!");  
+            message.channel.send ("Check your DM's for a list of online players!");
         }).catch((error) => {
             console.log("Server is offline");
         });
